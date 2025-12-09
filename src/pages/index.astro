@@ -12,39 +12,229 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	</head>
 	<body>
 		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
+		<main class="landing">
+			<section class="hero">
+				<div class="hero-text">
+					<p class="eyebrow">Architecture · Photography · Lifestyle Storytelling</p>
+					<h1>Crafting soulful spaces and cinematic frames.</h1>
+					<p class="lead">
+						Aleksandra Dikanska blends architectural thinking with editorial photography to capture
+						everyday luxury throughout Bulgaria and beyond.
+					</p>
+					<ul class="identity">
+						<li>🔺 Architect</li>
+						<li>📷 Photographer – Alex D Photography</li>
+						<li>🍝 Food lover</li>
+						<li>👠 Fashion obsessed</li>
+						<li>🐼 Mom of boys – Alex & Marten</li>
+					</ul>
+					<div class="cta-row">
+						<a class="btn primary" href="#contact">See how we can collaborate</a>
+						<a class="btn ghost" href="https://www.instagram.com/aleksandra_dikanska/" target="_blank"
+							rel="noreferrer">Follow the journey</a>
+					</div>
+				</div>
+				<div class="hero-card">
+					<p class="card-label">Currently booking</p>
+					<h2>Bespoke interiors · Lifestyle shoots · Editorial campaigns</h2>
+					<p>
+						Intuitive concepts, modern detailing, and heartfelt storytelling designed to feel personal
+						from the very first sketch.
+					</p>
+				</div>
+			</section>
+
+			<section class="pillars">
+				<article>
+					<h3>Architect</h3>
+					<p>
+						Form, function, and feeling come together through thoughtful residential and boutique
+						commercial concepts.
+					</p>
+				</article>
+				<article>
+					<h3>Photographer</h3>
+					<p>
+						Founder of Alex D Photography, curating luminous imagery for families, chefs, and fashion
+						brands.
+					</p>
+				</article>
+				<article>
+					<h3>Tastemaker</h3>
+					<p>
+						A love of food, couture, and motherhood informs every brief with warmth, texture, and soul.
+					</p>
+				</article>
+			</section>
+
+			<section class="contact" id="contact">
+				<div class="contact-card">
+					<p class="card-label">Let's create together</p>
+					<h2>Based in Bulgaria · Working worldwide</h2>
+					<div class="contact-grid">
+						<div>
+							<span>email</span>
+							<a href="mailto:arch_dikanska@abv.bg">arch_dikanska@abv.bg</a>
+						</div>
+						<div>
+							<span>phone</span>
+							<a href="tel:+359887130513">+359 887 130 513</a>
+						</div>
+					</div>
+				</div>
+				<div class="availability">
+					<h3>Signature offerings</h3>
+					<ul>
+						<li>Architecture & interior concept direction</li>
+						<li>Editorial & lifestyle photography sessions</li>
+						<li>Creative direction for food, fashion, and family brands</li>
+					</ul>
+				</div>
+			</section>
 		</main>
 		<Footer />
 	</body>
 </html>
+
+<style>
+	.landing {
+		padding-top: 4rem;
+		padding-bottom: 4rem;
+	}
+	.hero {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: 2.5rem;
+		align-items: center;
+		margin-bottom: 3rem;
+	}
+	.hero-text h1 {
+		font-size: clamp(2.5rem, 6vw, 3.8rem);
+	}
+	.eyebrow {
+		text-transform: uppercase;
+		letter-spacing: 0.2em;
+		font-size: 0.85rem;
+		color: rgb(var(--gray));
+		margin-bottom: 1rem;
+	}
+	.lead {
+		font-size: 1.2rem;
+		max-width: 48ch;
+		margin-bottom: 1.5rem;
+	}
+	.identity {
+		list-style: none;
+		padding: 0;
+		margin: 0 0 1.5rem 0;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.75rem;
+	}
+	.identity li {
+		background: rgba(var(--gray-light), 0.8);
+		border-radius: 999px;
+		padding: 0.4rem 0.9rem;
+		font-size: 0.95rem;
+	}
+	.cta-row {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1rem;
+	}
+	.btn {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 999px;
+		padding: 0.85rem 1.75rem;
+		text-decoration: none;
+		font-weight: 600;
+		border: 2px solid transparent;
+	}
+	.btn.primary {
+		background: var(--accent);
+		color: white;
+	}
+	.btn.primary:hover {
+		background: var(--accent-dark);
+	}
+	.btn.ghost {
+		border-color: rgba(var(--black), 0.1);
+		color: rgb(var(--black));
+	}
+	.hero-card,
+	.contact-card,
+	.availability,
+	.pillars article {
+		background: white;
+		border-radius: 24px;
+		padding: 1.5rem;
+		box-shadow: var(--box-shadow);
+	}
+	.hero-card h2 {
+		font-size: 1.5rem;
+		margin-bottom: 1rem;
+	}
+	.card-label {
+		text-transform: uppercase;
+		font-size: 0.8rem;
+		letter-spacing: 0.18em;
+		color: rgb(var(--gray));
+		margin-bottom: 0.75rem;
+	}
+	.pillars {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+		gap: 1.5rem;
+		margin-bottom: 3rem;
+	}
+	.pillars h3 {
+		font-size: 1.3rem;
+	}
+	.contact {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: 1.5rem;
+		align-items: start;
+	}
+	.contact-card h2 {
+		font-size: 1.8rem;
+		margin-bottom: 1rem;
+	}
+	.contact-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+		gap: 1rem;
+	}
+	.contact-grid span {
+		display: block;
+		text-transform: uppercase;
+		font-size: 0.75rem;
+		letter-spacing: 0.2em;
+		color: rgb(var(--gray));
+	}
+	.contact-grid a {
+		color: rgb(var(--black));
+		font-weight: 600;
+		text-decoration: none;
+	}
+	.contact-grid a:hover {
+		text-decoration: underline;
+	}
+	.availability ul {
+		margin: 0;
+		padding-left: 1.2rem;
+	}
+	.availability li + li {
+		margin-top: 0.5rem;
+	}
+	@media (max-width: 600px) {
+		.identity li {
+			width: 100%;
+		}
+		.cta-row {
+			flex-direction: column;
+		}
+	}
+</style>
